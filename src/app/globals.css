@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0070f3;
+  --secondary: #06b6d4;
+  --accent: #f97316;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --card-bg: rgba(15, 23, 42, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-slate-900/70 border border-white/50 dark:border-white/10 rounded-2xl shadow-lg;
+  }
+  .gradient-vibrant {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  }
+}
+
+/* Smooth SPA-like transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Markdown prose */
+.prose {
+  @apply text-foreground;
+}
+.prose p {
+  @apply my-3;
+}
+.prose ul, .prose ol {
+  @apply my-3 pl-6;
+}
+.prose li {
+  @apply my-1;
+}
+.prose h1, .prose h2, .prose h3 {
+  @apply font-bold mt-6 mb-2 text-foreground;
+}
+.prose a {
+  @apply text-primary hover:underline;
+}
+.prose code {
+  @apply px-1.5 py-0.5 rounded bg-white/20 dark:bg-black/20 text-sm;
+}
+.prose pre {
+  @apply p-4 rounded-xl my-3 overflow-x-auto bg-white/20 dark:bg-black/20;
+}
+.prose pre code {
+  @apply p-0 bg-transparent;
+}
