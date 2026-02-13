@@ -89,7 +89,7 @@ export function Header() {
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-foreground/90 hover:bg-primary/10 hover:text-primary transition-colors"
                 >
                   <PlusCircle className="w-4 h-4" />
-                  New Post
+                  Новый пост
                 </Link>
                 <div className="relative">
                   <button
@@ -115,14 +115,14 @@ export function Header() {
                           className="flex items-center gap-2 px-4 py-2 text-foreground hover:bg-white/10"
                           onClick={() => setUserMenuOpen(false)}
                         >
-                          <UserIcon className="w-4 h-4" /> Profile
+                          <UserIcon className="w-4 h-4" /> Профиль
                         </Link>
                         <button
                           type="button"
                           onClick={signOut}
                           className="flex items-center gap-2 w-full px-4 py-2 text-left text-foreground hover:bg-white/10"
                         >
-                          <LogOut className="w-4 h-4" /> Sign Out
+                          <LogOut className="w-4 h-4" /> Выйти
                         </button>
                       </div>
                     </>
@@ -136,14 +136,14 @@ export function Header() {
                   onClick={openSignIn}
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-foreground/90 hover:bg-primary/10 hover:text-primary transition-colors"
                 >
-                  <LogIn className="w-4 h-4" /> Sign In
+                  <LogIn className="w-4 h-4" /> Войти
                 </button>
                 <button
                   type="button"
                   onClick={openSignUp}
                   className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-white hover:bg-primary/90 transition-colors"
                 >
-                  <UserPlus className="w-4 h-4" /> Sign Up
+                  <UserPlus className="w-4 h-4" /> Регистрация
                 </button>
               </>
             )}
@@ -178,14 +178,14 @@ export function Header() {
                     className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10"
                     onClick={() => setMobileOpen(false)}
                   >
-                    <UserIcon className="w-4 h-4" /> Profile
+                    <UserIcon className="w-4 h-4" /> Профиль
                   </Link>
                   <button
                     type="button"
                     onClick={signOut}
                     className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 text-left"
                   >
-                    <LogOut className="w-4 h-4" /> Sign Out
+                    <LogOut className="w-4 h-4" /> Выйти
                   </button>
                 </>
               ) : (
@@ -195,14 +195,14 @@ export function Header() {
                     onClick={openSignIn}
                     className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-primary/10"
                   >
-                    <LogIn className="w-4 h-4" /> Sign In
+                    <LogIn className="w-4 h-4" /> Войти
                   </button>
                   <button
                     type="button"
                     onClick={openSignUp}
                     className="flex items-center gap-2 px-4 py-3 rounded-xl bg-primary text-white"
                   >
-                    <UserPlus className="w-4 h-4" /> Sign Up
+                    <UserPlus className="w-4 h-4" /> Регистрация
                   </button>
                 </>
               )}

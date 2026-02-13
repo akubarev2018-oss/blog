@@ -92,7 +92,7 @@ export function Feed() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/50" />
           <input
             type="search"
-            placeholder="Search posts..."
+            placeholder="Поиск по постам..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full pl-10 pr-4 py-2.5 rounded-xl glass border-0 focus:ring-2 focus:ring-primary/50"
@@ -111,7 +111,7 @@ export function Feed() {
                 : 'glass hover:bg-primary/10'
             }`}
           >
-            All
+            Все
           </button>
           {allTags.map((tag) => (
             <button
@@ -137,7 +137,7 @@ export function Feed() {
       </div>
 
       {posts.length === 0 && (
-        <p className="text-center text-foreground/60 py-12">No posts yet. Be the first to share!</p>
+        <p className="text-center text-foreground/60 py-12">Пока нет постов. Будьте первым!</p>
       )}
 
       <div ref={loadMoreRef} className="h-4" />

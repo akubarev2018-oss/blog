@@ -9,7 +9,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold text-foreground mb-6">Create a post</h1>
+      <h1 className="text-2xl font-bold text-foreground mb-6">Создать пост</h1>
       <CreatePostForm />
     </div>
   );

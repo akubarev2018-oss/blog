@@ -98,7 +98,7 @@ export function PostDetail({ postId, initialPost }: PostDetailProps) {
               author?.username?.slice(0, 1).toUpperCase() ?? '?'
             )}
           </div>
-          <span className="font-medium">{author?.username ?? 'Anonymous'}</span>
+          <span className="font-medium">{author?.username ?? 'Аноним'}</span>
         </Link>
         <span className="flex items-center gap-1">
           <Calendar className="w-4 h-4" />
@@ -154,7 +154,7 @@ export function PostDetail({ postId, initialPost }: PostDetailProps) {
           ) : (
             <Heart className={`w-5 h-5 ${userLikedPost ? 'fill-current' : ''}`} />
           )}
-          <span>Like</span>
+          <span>Нравится</span>
         </button>
       </div>
 
@@ -184,7 +184,7 @@ function CommentsSection({ postId }: { postId: string }) {
     <section className="border-t border-white/10 pt-8">
       <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
         <MessageCircle className="w-5 h-5" />
-        Comments
+        Комментарии
       </h2>
       <CommentForm postId={postId} />
       {isLoading ? (
@@ -232,7 +232,7 @@ function CommentForm({ postId }: { postId: string }) {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Write a comment..."
+        placeholder="Написать комментарий..."
         className="flex-1 px-4 py-2.5 rounded-xl glass border-0 focus:ring-2 focus:ring-primary/50"
       />
       <button
@@ -240,7 +240,7 @@ function CommentForm({ postId }: { postId: string }) {
         disabled={loading || !text.trim()}
         className="px-4 py-2.5 rounded-xl bg-primary text-white hover:bg-primary/90 disabled:opacity-50"
       >
-        Post
+        Отправить
       </button>
     </form>
   );
@@ -293,7 +293,7 @@ function CommentItem({ comment }: { comment: Comment & { profiles: Profile | nul
             {comment.profiles?.username?.slice(0, 1).toUpperCase() ?? '?'}
           </div>
           <div className="min-w-0">
-            <p className="font-medium text-foreground">{comment.profiles?.username ?? 'Anonymous'}</p>
+            <p className="font-medium text-foreground">{comment.profiles?.username ?? 'Аноним'}</p>
             <p className="text-sm text-foreground/80 mt-0.5">{comment.text}</p>
             <p className="text-xs text-foreground/50 mt-1">{date}</p>
           </div>

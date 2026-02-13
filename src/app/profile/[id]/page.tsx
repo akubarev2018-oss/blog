@@ -40,11 +40,11 @@ export default async function ProfilePage({
             <User className="w-6 h-6 text-primary" />
             {profile.username}
           </h1>
-          <p className="text-foreground/70 mt-1">Vlog profile</p>
+          <p className="text-foreground/70 mt-1">Профиль влога</p>
         </div>
       </div>
       <section>
-        <h2 className="text-xl font-bold text-foreground mb-4">Posts</h2>
+        <h2 className="text-xl font-bold text-foreground mb-4">Посты</h2>
         <div className="grid gap-6 sm:grid-cols-2">
           {(posts as (Post & { profiles: { username: string; avatar_url: string | null } | null })[]).map(
             (post) => (
@@ -53,7 +53,7 @@ export default async function ProfilePage({
           )}
         </div>
         {(!posts || posts.length === 0) && (
-          <p className="text-foreground/60">No posts yet.</p>
+          <p className="text-foreground/60">Пока нет постов.</p>
         )}
       </section>
     </div>

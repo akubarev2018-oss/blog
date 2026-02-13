@@ -108,32 +108,32 @@ export function CreatePostForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6 glass p-6 rounded-2xl">
       <div>
-        <label className="block text-sm font-medium text-foreground mb-1">Title</label>
+        <label className="block text-sm font-medium text-foreground mb-1">Заголовок</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          placeholder="Your post title"
+          placeholder="Заголовок поста"
           className="w-full px-4 py-2.5 rounded-xl border border-primary/30 bg-white/50 dark:bg-slate-800/50 focus:ring-2 focus:ring-primary/50"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-foreground mb-1">Tags (space or comma separated)</label>
+        <label className="block text-sm font-medium text-foreground mb-1">Теги (через пробел или запятую)</label>
         <input
           type="text"
           value={tagsInput}
           onChange={(e) => setTagsInput(e.target.value)}
-          placeholder="travel tech life"
+          placeholder="путешествия техника жизнь"
           className="w-full px-4 py-2.5 rounded-xl border border-primary/30 bg-white/50 dark:bg-slate-800/50 focus:ring-2 focus:ring-primary/50"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-foreground mb-1">Cover image</label>
+        <label className="block text-sm font-medium text-foreground mb-1">Обложка</label>
         <div className="flex items-center gap-4">
           <label className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dashed border-primary/50 cursor-pointer hover:bg-primary/5 transition-colors">
             <Upload className="w-5 h-5 text-primary" />
-            <span>Choose cover</span>
+            <span>Выбрать обложку</span>
             <input
               type="file"
               accept="image/*"
@@ -160,21 +160,21 @@ export function CreatePostForm() {
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-foreground mb-1">Content (Markdown)</label>
+        <label className="block text-sm font-medium text-foreground mb-1">Текст (Markdown)</label>
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
           required
           rows={10}
-          placeholder="Write your story in **Markdown**..."
+          placeholder="Пишите историю в **Markdown**..."
           className="w-full px-4 py-2.5 rounded-xl border border-primary/30 bg-white/50 dark:bg-slate-800/50 focus:ring-2 focus:ring-primary/50 font-mono text-sm"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-foreground mb-1">Body images (optional)</label>
+        <label className="block text-sm font-medium text-foreground mb-1">Картинки в тексте (необязательно)</label>
         <label className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dashed border-secondary/50 cursor-pointer hover:bg-secondary/5 transition-colors inline-flex">
           <ImagePlus className="w-5 h-5 text-secondary" />
-          <span>Add images</span>
+          <span>Добавить изображения</span>
           <input
             type="file"
             accept="image/*"
@@ -207,7 +207,7 @@ export function CreatePostForm() {
         className="w-full py-3 rounded-xl font-medium bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
       >
         {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-        {loading ? 'Publishing...' : 'Publish'}
+        {loading ? 'Публикуем...' : 'Опубликовать'}
       </button>
     </form>
   );

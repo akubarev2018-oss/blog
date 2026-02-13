@@ -41,7 +41,7 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: AuthModal
           onClose();
           window.location.href = '/';
         } else {
-          setMessage({ type: 'success', text: 'Check your email to confirm your account.' });
+          setMessage({ type: 'success', text: 'Проверьте почту для подтверждения аккаунта.' });
         }
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -71,13 +71,13 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: AuthModal
       <div className="relative glass p-6 w-full max-w-md animate-scale-in">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-foreground">
-            {mode === 'signin' ? 'Sign In' : 'Create Account'}
+            {mode === 'signin' ? 'Вход' : 'Регистрация'}
           </h2>
           <button
             type="button"
             onClick={onClose}
             className="p-2 rounded-xl hover:bg-white/20 transition-colors"
-            aria-label="Close"
+            aria-label="Закрыть"
           >
             <X className="w-5 h-5" />
           </button>
@@ -85,7 +85,7 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: AuthModal
         <form onSubmit={handleSubmit} className="space-y-4">
           {mode === 'signup' && (
             <div>
-              <label className="block text-sm font-medium text-foreground/80 mb-1">Username</label>
+              <label className="block text-sm font-medium text-foreground/80 mb-1">Имя пользователя</label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary" />
                 <input
@@ -113,7 +113,7 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: AuthModal
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-foreground/80 mb-1">Password</label>
+            <label className="block text-sm font-medium text-foreground/80 mb-1">Пароль</label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary" />
               <input
@@ -141,30 +141,30 @@ export function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: AuthModal
             disabled={loading}
             className="w-full py-3 rounded-xl font-medium bg-primary text-white hover:bg-primary/90 transition-colors disabled:opacity-50"
           >
-            {loading ? 'Please wait...' : mode === 'signin' ? 'Sign In' : 'Sign Up'}
+            {loading ? 'Подождите...' : mode === 'signin' ? 'Войти' : 'Зарегистрироваться'}
           </button>
         </form>
         <p className="mt-4 text-center text-sm text-foreground/70">
           {mode === 'signin' ? (
             <>
-              Don&apos;t have an account?{' '}
+              Нет аккаунта?{' '}
               <button
                 type="button"
                 onClick={() => setMode('signup')}
                 className="text-primary font-medium hover:underline"
               >
-                Sign Up
+                Регистрация
               </button>
             </>
           ) : (
             <>
-              Already have an account?{' '}
+              Уже есть аккаунт?{' '}
               <button
                 type="button"
                 onClick={() => setMode('signin')}
                 className="text-primary font-medium hover:underline"
               >
-                Sign In
+                Войти
               </button>
             </>
           )}

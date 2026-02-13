@@ -41,7 +41,7 @@ export function PostCard({ post }: PostCardProps) {
         <div className="flex items-center gap-3 mt-2 text-sm text-foreground/60">
           <span className="flex items-center gap-1">
             <User className="w-4 h-4" />
-            {author?.username ?? 'Anonymous'}
+            {author?.username ?? 'Аноним'}
           </span>
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
